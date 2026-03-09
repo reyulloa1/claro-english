@@ -1,0 +1,414 @@
+﻿:root {
+  --bg: #f7f1e8;
+  --bg-strong: #f0e1cc;
+  --surface: rgba(255, 251, 245, 0.82);
+  --surface-strong: #fffaf2;
+  --ink: #1f2430;
+  --muted: #5b6470;
+  --accent: #d65c3a;
+  --accent-deep: #aa3d22;
+  --accent-soft: #f4cdbd;
+  --line: rgba(31, 36, 48, 0.12);
+  --shadow: 0 18px 40px rgba(77, 52, 32, 0.12);
+  --headline-font: Georgia, 'Times New Roman', serif;
+  --body-font: 'Trebuchet MS', 'Gill Sans', sans-serif;
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(244, 205, 189, 0.75), transparent 34%),
+    radial-gradient(circle at top right, rgba(214, 92, 58, 0.12), transparent 28%),
+    linear-gradient(180deg, #fbf7f1 0%, var(--bg) 45%, #efe5d8 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.page-shell {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.site-header,
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-header {
+  margin-bottom: 28px;
+}
+
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 0 36px;
+  border-top: 1px solid var(--line);
+}
+
+.brand-mark,
+.footer-link,
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  font-family: var(--headline-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.site-nav a,
+.footer-link {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+main {
+  display: grid;
+  gap: 28px;
+}
+
+.hero-card,
+.season-panel,
+.signup-card,
+.episode-hero,
+.content-panel,
+.lesson-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.hero-card,
+.episode-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  padding: 34px;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.season-panel h2,
+.episode-hero-copy h1,
+.content-panel h2,
+.signup-card h2 {
+  margin: 0;
+  font-family: var(--headline-font);
+  line-height: 1.02;
+}
+
+.hero-copy h1,
+.episode-hero-copy h1 {
+  font-size: clamp(2.9rem, 7vw, 5.2rem);
+  max-width: 12ch;
+}
+
+.hero-body,
+.section-heading p,
+.pillar-card p,
+.host-bio,
+.episode-copy p,
+.signup-card p,
+.lesson-card p,
+.content-panel p,
+.platform-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.eyebrow,
+.episode-eyebrow,
+.lesson-label,
+.platform-status {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-deep);
+}
+
+.hero-actions,
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff8f3;
+}
+
+.button-secondary {
+  border-color: var(--line);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.trust-line {
+  margin-top: 18px;
+  font-size: 0.95rem;
+}
+
+.hero-panel,
+.host-stack,
+.pillar-grid,
+.platform-grid,
+.episode-layout,
+.phrase-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.hero-panel {
+  align-content: start;
+}
+
+.brand-badge {
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--accent) 0%, #ef9a6e 100%);
+  color: #fffaf4;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.host-card,
+.pillar-card,
+.platform-card,
+.episode-highlight,
+.lesson-card,
+.content-panel {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  border: 1px solid rgba(31, 36, 48, 0.08);
+}
+
+.host-name,
+.host-role,
+.platform-card h3,
+.episode-highlight h3 {
+  margin: 0;
+}
+
+.host-name,
+.episode-highlight h3,
+.content-panel h2 {
+  font-family: var(--headline-font);
+}
+
+.host-role {
+  color: var(--accent-deep);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.section-grid,
+.platform-strip {
+  display: grid;
+  gap: 18px;
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.compact h2 {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.pillar-grid,
+.platform-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.season-panel,
+.signup-card {
+  padding: 30px;
+}
+
+.episode-highlight,
+.split-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.episode-art {
+  min-height: 240px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(214, 92, 58, 0.96), rgba(245, 179, 122, 0.92));
+  color: #fff9f4;
+}
+
+.episode-art h3 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.02;
+}
+
+.episode-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.episode-meta span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(214, 92, 58, 0.12);
+  color: var(--accent-deep);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.takeaway-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.takeaway-list.large {
+  font-size: 1.05rem;
+}
+
+.signup-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+  gap: 24px;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  min-width: 220px;
+  padding: 14px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.88);
+  font: inherit;
+}
+
+.episode-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content-panel,
+.lesson-card {
+  padding: 28px;
+}
+
+.phrase-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.phrase-chip {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #fff7ee, #f4e2d2);
+  border: 1px solid rgba(170, 61, 34, 0.12);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 860px) {
+  .hero-card,
+  .episode-hero,
+  .signup-card,
+  .episode-highlight,
+  .split-panel,
+  .episode-layout,
+  .pillar-grid,
+  .platform-grid,
+  .phrase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    padding: 18px;
+  }
+
+  .site-header,
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-copy h1,
+  .episode-hero-copy h1 {
+    max-width: none;
+    font-size: clamp(2.4rem, 14vw, 4rem);
+  }
+}
