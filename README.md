@@ -2,6 +2,10 @@
 
 This workspace is the foundation for Claro English, an AI-powered English learning podcast and media brand for Spanish speakers starting life in the U.S.
 
+## Start Here
+
+- [Project Onboarding](C:\Users\reyli\OneDrive\Desktop\AI Podcast\PROJECT-ONBOARDING.md)
+
 ## Website
 
 The first static website foundation lives in:
